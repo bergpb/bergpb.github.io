@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Javascript</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/javascript.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
+Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
+Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes no&amp;nbsp;Ubuntu:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/yarn.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após adicionar atualize os pacotes e instale o &lt;code&gt;yarn&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Obs: Caso tenha realizado a instalação do node com &lt;code&gt;nvm&lt;/code&gt;, use o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install --no-install-recommends yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para instalação no Manjaro, apenas execute o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo pacman -S yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn init&lt;/code&gt; &amp;#8212; cria o arquivo package.json com suas principais&amp;nbsp;configurações&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn add&lt;/code&gt; &amp;#8212; adiciona o pacote para uso em seu&amp;nbsp;projeto&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn install&lt;/code&gt; ou simplesmente &lt;code&gt;yarn&lt;/code&gt; &amp;#8212; instala as depedências definidas no &lt;code&gt;package.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn remove&lt;/code&gt; &amp;#8212; remove um pacote do&amp;nbsp;projeto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aqui alguns comandos para quem já está bastante familiarizado com o &lt;code&gt;npm&lt;/code&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;span class="caps"&gt;NPM&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;Yarn&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;npm init&lt;/td&gt;
+&lt;td&gt;yarn init&lt;/td&gt;
+&lt;td&gt;Inicia um projeto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm run&lt;/td&gt;
+&lt;td&gt;yarn run&lt;/td&gt;
+&lt;td&gt;Executando um projeto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install&lt;/td&gt;
+&lt;td&gt;yarn install ou yarn&lt;/td&gt;
+&lt;td&gt;Instalando pacotes do package.json&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install [package] &amp;#8212;save&lt;/td&gt;
+&lt;td&gt;yarn add [package]&lt;/td&gt;
+&lt;td&gt;Instalando pacote e salvando no package.json&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install -g [package]&lt;/td&gt;
+&lt;td&gt;yarn global add [package] &amp;#8212;prefix /usr/local&lt;/td&gt;
+&lt;td&gt;Instalando pacote globalmente&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm list -g &amp;#8212;depth 0&lt;/td&gt;
+&lt;td&gt;yarn global list&lt;/td&gt;
+&lt;td&gt;Listando pacotes globais&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rm -rf node_modules &amp;amp;&amp;amp; npm install&lt;/td&gt;
+&lt;td&gt;yarn upgrade&lt;/td&gt;
+&lt;td&gt;Atualizando pacotes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm uninstall [package]&lt;/td&gt;
+&lt;td&gt;yarn remove [package]&lt;/td&gt;
+&lt;td&gt;Removendo pacotes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; Fontes: &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/p&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry></feed>

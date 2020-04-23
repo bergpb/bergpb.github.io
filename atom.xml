@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Micropython</title><link href="https://bergpb.github.io/instalacao-micropython.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name></name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-micropython.html</id><summary type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
+&lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
+&lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de código entre diferentes boards. Quase que em 90% dos casos o mesmo código escrito no &lt;span class="caps"&gt;ESP8266&lt;/span&gt; irão executar no &lt;span class="caps"&gt;ESP32&lt;/span&gt; (apesar de suas particularidades como executar threads, disponível apenas no &lt;span class="caps"&gt;ESP32&lt;/span&gt;).&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Para realizar a instalação precisamos do pacote esptool que pode ser baixado pelo &lt;code&gt;pip3&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 install esptool --user
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Conecte seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt; ou &lt;span class="caps"&gt;ESP32&lt;/span&gt; na porta usb do seu computador e execute o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;p&gt;Este comando irá limpar a memória flash do seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;br&gt;
+&lt;em&gt;A porta pode não ser igual a utilizada neste&amp;nbsp;post.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;esptool.py --port /dev/ttyUSB0 erase_flash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Baixe a imagem oficial para sua board sendo ela o &lt;span class="caps"&gt;ESP8266&lt;/span&gt; ou &lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;As imagens podem ser baixadas através do site: &lt;a href="https://micropython.org/download"&gt;https://micropython.org/download&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;ESP8266&lt;/span&gt;:&lt;br&gt;
+&lt;a href="https://micropython.org/resources/firmware/esp8266-20191220-v1.12.bin"&gt;https://micropython.org/resources/firmware/esp8266-20191220-v1.12.bin&lt;/a&gt;.&lt;br&gt;
+&lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;br&gt;
+&lt;a href="https://micropython.org/resources/firmware/esp32-idf4-20191220-v1.12.bin"&gt;https://micropython.org/resources/firmware/esp32-idf4-20191220-v1.12.bin&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Links atualizados em&amp;nbsp;05/01/2020&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Para realizar o flash do firmware em seu &lt;span class="caps"&gt;ESP&lt;/span&gt;, execute o segundo comando:&lt;br&gt;
+- &lt;em&gt;A porta pode não ser igual a utilizada neste post.&lt;/em&gt;&lt;br&gt;
+- &lt;em&gt;O último parâmetro repassado no comando deve ser o nome do arquivo que você&amp;nbsp;baixou.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;esptool.py --port /dev/ttyUSB0 --baud &lt;span class="m"&gt;460800&lt;/span&gt; write_flash --flash_size&lt;span class="o"&gt;=&lt;/span&gt;detect &lt;span class="m"&gt;0&lt;/span&gt; esp8266-20190529-v1.11.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após esses passos o firmware estará instalado no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;.&lt;br&gt;
+Caso queria voltar a executar códigos em C na sua board, basta realizar qualquer upload através do Arduino &lt;span class="caps"&gt;IDE&lt;/span&gt; que o firmware original será reescrito&amp;nbsp;novamente.&lt;/p&gt;
+&lt;p&gt;Fonte: &lt;a href="https://docs.micropython.org/en/latest/index.html"&gt;https://docs.micropython.org/en/latest/index.html&lt;/a&gt;&lt;/p&gt;</content><category term="Microcontroladores"></category><category term="microcontroladores"></category><category term="python"></category></entry><entry><title>PostgreSQL no Linux</title><link href="https://bergpb.github.io/instalacao-postgres-linux.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-postgres-linux.html</id><summary type="html">&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;O PostgreSQL é um poderoso banco de dados objeto-relacional e de código aberto com mais de 30 anos de desenvolvimento.&amp;#8221;&lt;br&gt;
+&lt;em&gt;Diretamente do site&amp;nbsp;oficial.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;O PostgreSQL é um dos bancos de dados relacionais mais utilizados até hoje, atualmente na versão 11.5 de acordo com o site oficial: &lt;a href="https://www.postgresql.org/"&gt;https://www …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;O PostgreSQL é um poderoso banco de dados objeto-relacional e de código aberto com mais de 30 anos de desenvolvimento.&amp;#8221;&lt;br&gt;
+&lt;em&gt;Diretamente do site&amp;nbsp;oficial.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;O PostgreSQL é um dos bancos de dados relacionais mais utilizados até hoje, atualmente na versão 11.5 de acordo com o site oficial: &lt;a href="https://www.postgresql.org/"&gt;https://www.postgresql.org/&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Instalando os pacotes pelo &lt;code&gt;apt&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sudo apt install postgresql postgresql-contrib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Confira a versão instalada com o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ psql --version
+&amp;gt; psql &lt;span class="o"&gt;(&lt;/span&gt;PostgreSQL&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;9&lt;/span&gt;.6.9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entrando com permissões de&amp;nbsp;superusuário:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo -u postgres psql
+&amp;gt; psql &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.6.9&lt;span class="o"&gt;)&lt;/span&gt;
+&amp;gt; Type &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; help.
+
+&amp;gt; &lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora iremos alterar a senha padrão do usuário &lt;code&gt;postgres&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Alterando senha do usuário &lt;code&gt;postgres&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Para alterar a senha do usuário padrão &lt;code&gt;postgres&lt;/code&gt; devemos seguir os seguintes passos:&lt;br&gt;
+Digite o seguinte comando para que possamos alterar o arquivo &lt;code&gt;pg_hba.conf&lt;/code&gt;:&lt;br&gt;
+&lt;em&gt;Obs: Pode variar de acordo com sua versão&amp;nbsp;instalada.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Altere a seguinte&amp;nbsp;linha:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# De:&lt;/span&gt;
+&lt;span class="c1"&gt;# Database administrative login by Unix domain socket&lt;/span&gt;
+&lt;span class="nb"&gt;local&lt;/span&gt;   all             postgres                                peer
+&lt;span class="c1"&gt;# Para:&lt;/span&gt;
+&lt;span class="c1"&gt;# Database administrative login by Unix domain socket&lt;/span&gt;
+&lt;span class="nb"&gt;local&lt;/span&gt;   all             postgres                                md5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Reinicie o serviço com o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo service postgresql restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entre no console do &lt;code&gt;postgres&lt;/code&gt; permissões de&amp;nbsp;superusuário:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo -u postgres psql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Altere sua senha com o&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;psql &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.6.9&lt;span class="o"&gt;)&lt;/span&gt;
+Type &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; help.
+
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#\password&lt;/span&gt;
+&lt;span class="c1"&gt;# digite sua nova senha:&lt;/span&gt;
+Enter new password:
+&lt;span class="c1"&gt;# digite novamente&lt;/span&gt;
+Enter it again:
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pronto senha alterada.&lt;br&gt;
+Você pode entrar no &lt;code&gt;psql&lt;/code&gt; usando o comando &lt;code&gt;psql -U postgres -W&lt;/code&gt; digitando sua nova&amp;nbsp;senha.&lt;/p&gt;
+&lt;h3&gt;Comandos Básicos do &lt;code&gt;psql&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Iniciando serviço do &lt;code&gt;PostgreSQL&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo service postgresql start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entrando no terminal do &lt;code&gt;psql&lt;/code&gt; com sua senha do&amp;nbsp;postgres:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;psql -U postgres -W
+&amp;gt; Password &lt;span class="k"&gt;for&lt;/span&gt; user postgres:
+&amp;gt; &lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Comandos do&amp;nbsp;psql:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="se"&gt;\l&lt;/span&gt;ist &lt;span class="c1"&gt;# lista todas as databases no banco de dados&lt;/span&gt;
+&lt;span class="se"&gt;\c&lt;/span&gt; nome_do_banco &lt;span class="c1"&gt;# realiza a conexão com o banco&lt;/span&gt;
+&lt;span class="se"&gt;\d&lt;/span&gt;t &lt;span class="c1"&gt;# lista as tabelas no banco que está conectado&lt;/span&gt;
+&lt;span class="se"&gt;\d&lt;/span&gt;n &lt;span class="c1"&gt;# mostra schemas criados&lt;/span&gt;
+&lt;span class="se"&gt;\p&lt;/span&gt;assword &lt;span class="c1"&gt;# altera a senha para o usuário conectado&lt;/span&gt;
+&lt;span class="se"&gt;\q&lt;/span&gt; &lt;span class="c1"&gt;# sai do console do psql&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podemos também executar comando sql dentro do &lt;code&gt;psql&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# criando um novo banco:&lt;/span&gt;
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#create database teste;&lt;/span&gt;
+CREATE DATABASE
+
+&lt;span class="c1"&gt;# conectando ao banco criado:&lt;/span&gt;
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#\c teste&lt;/span&gt;
+You are now connected to database &lt;span class="s2"&gt;&amp;quot;teste&amp;quot;&lt;/span&gt; as user &lt;span class="s2"&gt;&amp;quot;postgres&amp;quot;&lt;/span&gt;.
+
+&lt;span class="c1"&gt;# criando uma nova tabela:&lt;/span&gt;
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#create table usuarios(nome varchar(20), idade int);&lt;/span&gt;
+CREATE TABLE
+
+&lt;span class="c1"&gt;# inserindo usuários no banco de dados:&lt;/span&gt;
+&lt;span class="nv"&gt;postgres&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="c1"&gt;#insert into usuarios (nome, idade) values (&amp;#39;João&amp;#39;, 22);&lt;/span&gt;
+INSERT &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# selecionando dados da tabela usuarios:&lt;/span&gt;
+nome &lt;span class="p"&gt;|&lt;/span&gt; idade
+-----+------
+João &lt;span class="p"&gt;|&lt;/span&gt;    &lt;span class="m"&gt;22&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; row&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Banco de Dados"></category><category term="postgresql"></category><category term="linux"></category><category term="database"></category></entry><entry><title>python3 e pip3</title><link href="https://bergpb.github.io/instalacao-python-pip.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-python-pip.html</id><summary type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
+&lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
+Então …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
+&lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
+Então comece a usa o &lt;code&gt;python3&lt;/code&gt; em seus projeto e evite problemas&amp;nbsp;futuros.&lt;/p&gt;
+&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos a versão &lt;code&gt;3.8.1&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Realizando a&amp;nbsp;instalação:&lt;/p&gt;
+&lt;p&gt;Instalando os pacotes &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; pelo&amp;nbsp;apt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3 python3-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para conferir a versão do &lt;code&gt;python&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para conferir a versão do &lt;code&gt;pip&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos entrar no console do &lt;code&gt;python&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E executar o famoso &amp;#8216;hello&amp;nbsp;world&amp;#8217;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# digite o texto abaixo e aperte enter:&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# saída no console:&lt;/span&gt;
+&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linguagem"></category><category term="python"></category><category term="pip"></category></entry><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
+Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
+Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes no&amp;nbsp;Ubuntu:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg &lt;span class="p"&gt;|&lt;/span&gt; sudo apt-key add -
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;deb https://dl.yarnpkg.com/debian/ stable main&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/yarn.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após adicionar atualize os pacotes e instale o &lt;code&gt;yarn&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt install yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Obs: Caso tenha realizado a instalação do node com &lt;code&gt;nvm&lt;/code&gt;, use o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install --no-install-recommends yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para instalação no Manjaro, apenas execute o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo pacman -S yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn init&lt;/code&gt; &amp;#8212; cria o arquivo package.json com suas principais&amp;nbsp;configurações&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn add&lt;/code&gt; &amp;#8212; adiciona o pacote para uso em seu&amp;nbsp;projeto&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn install&lt;/code&gt; ou simplesmente &lt;code&gt;yarn&lt;/code&gt; &amp;#8212; instala as depedências definidas no &lt;code&gt;package.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yarn remove&lt;/code&gt; &amp;#8212; remove um pacote do&amp;nbsp;projeto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aqui alguns comandos para quem já está bastante familiarizado com o &lt;code&gt;npm&lt;/code&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;span class="caps"&gt;NPM&lt;/span&gt;&lt;/th&gt;
+&lt;th&gt;Yarn&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;npm init&lt;/td&gt;
+&lt;td&gt;yarn init&lt;/td&gt;
+&lt;td&gt;Inicia um projeto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm run&lt;/td&gt;
+&lt;td&gt;yarn run&lt;/td&gt;
+&lt;td&gt;Executando um projeto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install&lt;/td&gt;
+&lt;td&gt;yarn install ou yarn&lt;/td&gt;
+&lt;td&gt;Instalando pacotes do package.json&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install [package] &amp;#8212;save&lt;/td&gt;
+&lt;td&gt;yarn add [package]&lt;/td&gt;
+&lt;td&gt;Instalando pacote e salvando no package.json&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm install -g [package]&lt;/td&gt;
+&lt;td&gt;yarn global add [package] &amp;#8212;prefix /usr/local&lt;/td&gt;
+&lt;td&gt;Instalando pacote globalmente&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm list -g &amp;#8212;depth 0&lt;/td&gt;
+&lt;td&gt;yarn global list&lt;/td&gt;
+&lt;td&gt;Listando pacotes globais&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rm -rf node_modules &amp;amp;&amp;amp; npm install&lt;/td&gt;
+&lt;td&gt;yarn upgrade&lt;/td&gt;
+&lt;td&gt;Atualizando pacotes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;npm uninstall [package]&lt;/td&gt;
+&lt;td&gt;yarn remove [package]&lt;/td&gt;
+&lt;td&gt;Removendo pacotes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt; Fontes: &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
+&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/p&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry><entry><title>Sua Primeira Aplicação com Flask</title><link href="https://bergpb.github.io/primeira-aplicacao-flask.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/primeira-aplicacao-flask.html</id><summary type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
+&lt;p&gt;Aviso:&lt;br&gt;
+Obs: Tenha o &lt;code&gt;python3 …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
+&lt;p&gt;Aviso:&lt;br&gt;
+Obs: Tenha o &lt;code&gt;python3&lt;/code&gt; e o &lt;code&gt;pip&lt;/code&gt; instalados em seu &lt;span class="caps"&gt;SO&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Iniciando&amp;nbsp;aplicação&lt;/h3&gt;
+&lt;p&gt;Vamos criar uma pasta para nosso projeto, criar uma &lt;code&gt;venv&lt;/code&gt; e instalar o &lt;code&gt;flask&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Criando uma&amp;nbsp;pasta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir primeira_aplicacao_flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entrando na&amp;nbsp;pasta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; primeira_aplicacao_flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora vamos criar a nossa &lt;code&gt;venv&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos ativar a &lt;code&gt;venv&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E instalar &lt;code&gt;flask&lt;/code&gt; com o &lt;code&gt;pip&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após isso já podemos criar nosso arquivo e iniciar nossa&amp;nbsp;aplicação:&lt;/p&gt;
+&lt;p&gt;Cria um novo arquivo através do&amp;nbsp;terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch app.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Usando alguma &lt;span class="caps"&gt;IDE&lt;/span&gt; de sua preferência ou o próprio &lt;code&gt;vim&lt;/code&gt; ou &lt;code&gt;nano&lt;/code&gt;, abra o arquivo criado no anteriormente e insira o seguinte&amp;nbsp;conteúdo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create_app&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Devemos esportar as serguintes variáveis de ambiente para o Flask inicie a aplicação&amp;nbsp;corretamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;FLASK_ENV&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;development
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;FLASK_APP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;app.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora vamos servir nossa aplicação para que possamos ver seu retorno no&amp;nbsp;browser.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Teremos um retorno semelhante a&amp;nbsp;esse:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; * Serving Flask app &lt;span class="s2"&gt;&amp;quot;app.py&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;lazy loading&lt;span class="o"&gt;)&lt;/span&gt;
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ &lt;span class="o"&gt;(&lt;/span&gt;Press CTRL+C to quit&lt;span class="o"&gt;)&lt;/span&gt;
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: &lt;span class="m"&gt;123&lt;/span&gt;-456-789
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podemos acessar a aplicação através da url &lt;a href="http://localhost:5000"&gt;http://localhost:5000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Agora você já pode se considerar um desenvolvendor iniciante com micro-framework Flask.&lt;br&gt;
+Ainda tem bastante conteúdo sobre Flask para postar então fique ligado e até o próximo&amp;nbsp;post.&lt;/p&gt;</content><category term="Flask"></category><category term="flask"></category><category term="python"></category><category term="microframework"></category></entry><entry><title>Ambientes Virtuais com Python</title><link href="https://bergpb.github.io/python-venv.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/python-venv.html</id><summary type="html">&lt;p&gt;A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do&amp;nbsp;sistema.&lt;/p&gt;
+&lt;p&gt;Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do&amp;nbsp;sistema.&lt;/p&gt;
+&lt;p&gt;Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que não exista permissão para instalação dos pacotes como superusuário assim com o &lt;code&gt;venv&lt;/code&gt; não há&amp;nbsp;preocupação.&lt;/p&gt;
+&lt;p&gt;Existem algumas vantagens em utilizar o &lt;code&gt;venv&lt;/code&gt; no lugar de outras bibliotecas, uma delas é que se trata um pacote do próprio &lt;code&gt;python3&lt;/code&gt;, trazendo assim toda as facilidades de uma biblioteca&amp;nbsp;padrão.&lt;/p&gt;
+&lt;p&gt;Caso tenha interesse em conhecer outras bibliotecas e suas diferenças no link abaixo temos uma explicação bacana sobre cada uma delas &lt;em&gt;em inglês&lt;/em&gt;:
+&lt;a href="https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe"&gt;https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Instalando o pacote &lt;code&gt;venv&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Obs:
+O &lt;code&gt;venv&lt;/code&gt; funciona nas versões 2.7, 3.5, 3.6, 3.7.6 e 3.8 do Python.&lt;br&gt;
+Neste post iremos usar a 3.x, padrão de vários sistemas operacionais como no Ubuntu e no&amp;nbsp;Manjaro.&lt;/p&gt;
+&lt;p&gt;Instale o pacote &lt;code&gt;venv&lt;/code&gt; com o &lt;code&gt;pip3&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3-venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Dentro do seu projeto use o comando &lt;code&gt;python -m venv .venv&lt;/code&gt; para criar uma virtual&amp;nbsp;environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pronto instalação finalizada. Agora vamos aprender a usar o &lt;code&gt;venv&lt;/code&gt; dentro do nosso&amp;nbsp;projeto:&lt;/p&gt;
+&lt;h3&gt;Adicionando uma &lt;code&gt;venv&lt;/code&gt; no seu&amp;nbsp;projeto&lt;/h3&gt;
+&lt;p&gt;Crie a pasta do seu&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir nome_do_projeto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entre na pasta do&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; nome_do_projeto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Insira o seguinte comando para criar uma &lt;code&gt;venv&lt;/code&gt; dentro do seu&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Precisamos ativar a &lt;code&gt;venv&lt;/code&gt; para que use a versão do python e pacotes apenas no seu projeto separando-os do seu sistema&amp;nbsp;operacional:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;O retorno será semelhante a&amp;nbsp;esse:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;.venv&lt;span class="o"&gt;)&lt;/span&gt;bergpb@localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para desativar a &lt;code&gt;venv&lt;/code&gt; basta usar o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Eu costumo adicionar o comando para ativar uma &lt;code&gt;venv&lt;/code&gt; como alias no meu &lt;code&gt;.bashrc&lt;/code&gt; desta forma, assim não preciso digitar o comando completo, apenas utilizo o alias &lt;code&gt;activate&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;alias activate=&amp;#39;source .venv/bin/activate&amp;#39;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pronto agora você pode instalar pacotes sem se preocupar com conflitos em outros&amp;nbsp;projetos.&lt;/p&gt;</content><category term="Python"></category><category term="python"></category><category term="venv"></category><category term="virtualenv"></category><category term="environments"></category></entry></feed>

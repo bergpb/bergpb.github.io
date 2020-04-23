@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Metas -->
+	<meta charset="utf-8">
+	<title>Ambientes Virtuais com Python | bergpb</title>
+	<meta name="description" content="A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do sistema. Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que …">
+	<meta name="author" content="Berg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Twitter Cards and Open Graph -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@lbergpb">
+	<meta name="twitter:domain" content="lbarbosa.netlify.com">
+	<meta name="twitter:site" content="@lbergpb">
+	<meta property="og:title" content="Ambientes Virtuais com Python">
+	<meta property="og:description" content="A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do sistema. Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que …">
+	<meta property="og:image" content="https://bergpb.github.io/images/icons/avatar.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://bergpb.github.io/python-venv.html">
+
+	<!-- Stylesheets and Web Fonts -->
+    <link rel="stylesheet" href="/theme/css/style.min.css">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+
+	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-196x196.png" sizes="196x196">
+
+	<meta name="theme-color" content="#FF8000">
+
+	<meta name="msapplication-TileColor" content="#FF8000">
+	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
+	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-small.png">
+	<meta name="msapplication-square150x150logo" content="/images/icons/mstile-medium.png">
+	<meta name="msapplication-wide310x150logo" content="/images/icons/mstile-wide.png">
+	<meta name="msapplication-square310x310logo" content="/images/icons/mstile-large.png">
+
+	<!--[if lt IE 9]>
+	<script src="/theme/js/html5shiv.min.js"></script>
+	<script src="/theme/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<aside>
+			<a href="/"><img id="avatar" alt="Site Avatar" src="/images/icons/avatar.png"></a>
+			<div id="name"><a href="/">bergpb</a></div>
+			<div id="bio">Desenvolvedor Web. Entusiasta pela cultura DevOps e tecnologia.</div>
+
+			<div id="sidebar-links">
+				<a class="link" href="/archive/">Posts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/tags/">Tags</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/about/">Sobre</a>
+			</div>
+
+			<div id="social">
+				<a href="mailto:lindembergdepaulo@gmail.com" target="_blank" title="Email (lindembergdepaulo@gmail.com)" class="icon fa fa-envelope"></a>
+				<a href="http://twitter.com/lbergpb" target="_blank" title="Twitter" class="icon fa fa-twitter"></a>
+				<a href="http://github.com/bergpb" target="_blank" title="GitHub" class="icon fa fa-github"></a>
+			</div>
+
+			<hr id="sidebar-divider">
+		</aside>
+
+		<article>
+	<h1 class="title"><a href="/python-venv.html" title="Permalink to Ambientes Virtuais com Python">Ambientes Virtuais com&nbsp;Python</a></h1>
+	<time class="date" datetime="2020-04-05 09:00:00-03:00">05/Apr/2020</time>
+	<div class="content">
+		<p>A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do&nbsp;sistema.</p>
+<p>Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que não exista permissão para instalação dos pacotes como superusuário assim com o <code>venv</code> não há&nbsp;preocupação.</p>
+<p>Existem algumas vantagens em utilizar o <code>venv</code> no lugar de outras bibliotecas, uma delas é que se trata um pacote do próprio <code>python3</code>, trazendo assim toda as facilidades de uma biblioteca&nbsp;padrão.</p>
+<p>Caso tenha interesse em conhecer outras bibliotecas e suas diferenças no link abaixo temos uma explicação bacana sobre cada uma delas <em>em inglês</em>:
+<a href="https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe">https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe</a></p>
+<h3>Instalando o pacote <code>venv</code></h3>
+<p>Obs:
+O <code>venv</code> funciona nas versões 2.7, 3.5, 3.6, 3.7.6 e 3.8 do Python.<br>
+Neste post iremos usar a 3.x, padrão de vários sistemas operacionais como no Ubuntu e no&nbsp;Manjaro.</p>
+<p>Instale o pacote <code>venv</code> com o <code>pip3</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install python3-venv
+</code></pre></div>
+
+
+<p>Dentro do seu projeto use o comando <code>python -m venv .venv</code> para criar uma virtual&nbsp;environment:</p>
+<div class="highlight"><pre><span></span><code>python -m venv .venv
+</code></pre></div>
+
+
+<p>Pronto instalação finalizada. Agora vamos aprender a usar o <code>venv</code> dentro do nosso&nbsp;projeto:</p>
+<h3>Adicionando uma <code>venv</code> no seu&nbsp;projeto</h3>
+<p>Crie a pasta do seu&nbsp;projeto:</p>
+<div class="highlight"><pre><span></span><code>mkdir nome_do_projeto
+</code></pre></div>
+
+
+<p>Entre na pasta do&nbsp;projeto:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nome_do_projeto
+</code></pre></div>
+
+
+<p>Insira o seguinte comando para criar uma <code>venv</code> dentro do seu&nbsp;projeto:</p>
+<div class="highlight"><pre><span></span><code>python -m venv .venv
+</code></pre></div>
+
+
+<p>Precisamos ativar a <code>venv</code> para que use a versão do python e pacotes apenas no seu projeto separando-os do seu sistema&nbsp;operacional:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> .venv/bin/activate
+</code></pre></div>
+
+
+<p>O retorno será semelhante a&nbsp;esse:</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>.venv<span class="o">)</span>bergpb@localhost
+</code></pre></div>
+
+
+<p>Para desativar a <code>venv</code> basta usar o seguinte&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>deactivate
+</code></pre></div>
+
+
+<p>Eu costumo adicionar o comando para ativar uma <code>venv</code> como alias no meu <code>.bashrc</code> desta forma, assim não preciso digitar o comando completo, apenas utilizo o alias <code>activate</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;alias activate=&#39;source .venv/bin/activate&#39;&quot;</span> &gt;&gt; ~/.bashrc
+</code></pre></div>
+
+
+<p>Pronto agora você pode instalar pacotes sem se preocupar com conflitos em outros&nbsp;projetos.</p>
+	</div>
+
+	<div id="related-articles">
+		<a href="/primeira-aplicacao-flask.html" id="next-neighbour">&laquo; Sua Primeira Aplicação com Flask</a>
+	</div>
+
+	<hr>
+
+	<!-- Disqus -->
+	<div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function() {
+		this.page.url = 'https://bergpb.github.io/python-venv.html';
+		this.page.identifier = 'python-venv.html';
+	};
+
+	(function() {
+		var d = document, s = d.createElement('script');
+		s.src = '//lbarbosa.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+	</script>
+			<hr>
+		</article>
+
+		<footer>
+			<p>Powered by <a class="link" href="http://getpelican.com">Pelican</a>.</p>
+		</footer>
+	</div>
+
+
+</body>
+</html>

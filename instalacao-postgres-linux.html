@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Metas -->
+	<meta charset="utf-8">
+	<title>PostgreSQL no Linux | bergpb</title>
+	<meta name="description" content="“O PostgreSQL é um poderoso banco de dados objeto-relacional e de código aberto com mais de 30 anos de desenvolvimento.” Diretamente do site oficial. O PostgreSQL é um dos bancos de dados relacionais mais utilizados até hoje, atualmente na versão 11.5 de acordo com o site oficial: https://www …">
+	<meta name="author" content="Berg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Twitter Cards and Open Graph -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@lbergpb">
+	<meta name="twitter:domain" content="lbarbosa.netlify.com">
+	<meta name="twitter:site" content="@lbergpb">
+	<meta property="og:title" content="PostgreSQL no Linux">
+	<meta property="og:description" content="“O PostgreSQL é um poderoso banco de dados objeto-relacional e de código aberto com mais de 30 anos de desenvolvimento.” Diretamente do site oficial. O PostgreSQL é um dos bancos de dados relacionais mais utilizados até hoje, atualmente na versão 11.5 de acordo com o site oficial: https://www …">
+	<meta property="og:image" content="https://bergpb.github.io/images/icons/avatar.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://bergpb.github.io/instalacao-postgres-linux.html">
+
+	<!-- Stylesheets and Web Fonts -->
+    <link rel="stylesheet" href="/theme/css/style.min.css">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+
+	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-196x196.png" sizes="196x196">
+
+	<meta name="theme-color" content="#FF8000">
+
+	<meta name="msapplication-TileColor" content="#FF8000">
+	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
+	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-small.png">
+	<meta name="msapplication-square150x150logo" content="/images/icons/mstile-medium.png">
+	<meta name="msapplication-wide310x150logo" content="/images/icons/mstile-wide.png">
+	<meta name="msapplication-square310x310logo" content="/images/icons/mstile-large.png">
+
+	<!--[if lt IE 9]>
+	<script src="/theme/js/html5shiv.min.js"></script>
+	<script src="/theme/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<aside>
+			<a href="/"><img id="avatar" alt="Site Avatar" src="/images/icons/avatar.png"></a>
+			<div id="name"><a href="/">bergpb</a></div>
+			<div id="bio">Desenvolvedor Web. Entusiasta pela cultura DevOps e tecnologia.</div>
+
+			<div id="sidebar-links">
+				<a class="link" href="/archive/">Posts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/tags/">Tags</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/about/">Sobre</a>
+			</div>
+
+			<div id="social">
+				<a href="mailto:lindembergdepaulo@gmail.com" target="_blank" title="Email (lindembergdepaulo@gmail.com)" class="icon fa fa-envelope"></a>
+				<a href="http://twitter.com/lbergpb" target="_blank" title="Twitter" class="icon fa fa-twitter"></a>
+				<a href="http://github.com/bergpb" target="_blank" title="GitHub" class="icon fa fa-github"></a>
+			</div>
+
+			<hr id="sidebar-divider">
+		</aside>
+
+		<article>
+	<h1 class="title"><a href="/instalacao-postgres-linux.html" title="Permalink to PostgreSQL no Linux">PostgreSQL no&nbsp;Linux</a></h1>
+	<time class="date" datetime="2020-04-05 09:00:00-03:00">05/Apr/2020</time>
+	<div class="content">
+		<p><span class="dquo">&#8220;</span>O PostgreSQL é um poderoso banco de dados objeto-relacional e de código aberto com mais de 30 anos de desenvolvimento.&#8221;<br>
+<em>Diretamente do site&nbsp;oficial.</em></p>
+<p>O PostgreSQL é um dos bancos de dados relacionais mais utilizados até hoje, atualmente na versão 11.5 de acordo com o site oficial: <a href="https://www.postgresql.org/">https://www.postgresql.org/</a></p>
+<h3>Instalação</h3>
+<p>Instalando os pacotes pelo <code>apt</code>:</p>
+<div class="highlight"><pre><span></span><code>$ sudo apt install postgresql postgresql-contrib
+</code></pre></div>
+
+
+<p>Confira a versão instalada com o seguinte&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>$ psql --version
+&gt; psql <span class="o">(</span>PostgreSQL<span class="o">)</span> <span class="m">9</span>.6.9
+</code></pre></div>
+
+
+<p>Entrando com permissões de&nbsp;superusuário:</p>
+<div class="highlight"><pre><span></span><code>sudo -u postgres psql
+&gt; psql <span class="o">(</span><span class="m">9</span>.6.9<span class="o">)</span>
+&gt; Type <span class="s2">&quot;help&quot;</span> <span class="k">for</span> help.
+
+&gt; <span class="nv">postgres</span><span class="o">=</span><span class="c1">#</span>
+</code></pre></div>
+
+
+<p>Agora iremos alterar a senha padrão do usuário <code>postgres</code>.</p>
+<h3>Alterando senha do usuário <code>postgres</code></h3>
+<p>Para alterar a senha do usuário padrão <code>postgres</code> devemos seguir os seguintes passos:<br>
+Digite o seguinte comando para que possamos alterar o arquivo <code>pg_hba.conf</code>:<br>
+<em>Obs: Pode variar de acordo com sua versão&nbsp;instalada.</em></p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/postgresql/9.6/main/pg_hba.conf
+</code></pre></div>
+
+
+<p>Altere a seguinte&nbsp;linha:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># De:</span>
+<span class="c1"># Database administrative login by Unix domain socket</span>
+<span class="nb">local</span>   all             postgres                                peer
+<span class="c1"># Para:</span>
+<span class="c1"># Database administrative login by Unix domain socket</span>
+<span class="nb">local</span>   all             postgres                                md5
+</code></pre></div>
+
+
+<p>Reinicie o serviço com o seguinte&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>sudo service postgresql restart
+</code></pre></div>
+
+
+<p>Entre no console do <code>postgres</code> permissões de&nbsp;superusuário:</p>
+<div class="highlight"><pre><span></span><code>sudo -u postgres psql
+</code></pre></div>
+
+
+<p>Altere sua senha com o&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>psql <span class="o">(</span><span class="m">9</span>.6.9<span class="o">)</span>
+Type <span class="s2">&quot;help&quot;</span> <span class="k">for</span> help.
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#\password</span>
+<span class="c1"># digite sua nova senha:</span>
+Enter new password:
+<span class="c1"># digite novamente</span>
+Enter it again:
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#</span>
+</code></pre></div>
+
+
+<p>Pronto senha alterada.<br>
+Você pode entrar no <code>psql</code> usando o comando <code>psql -U postgres -W</code> digitando sua nova&nbsp;senha.</p>
+<h3>Comandos Básicos do <code>psql</code></h3>
+<p>Iniciando serviço do <code>PostgreSQL</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo service postgresql start
+</code></pre></div>
+
+
+<p>Entrando no terminal do <code>psql</code> com sua senha do&nbsp;postgres:</p>
+<div class="highlight"><pre><span></span><code>psql -U postgres -W
+&gt; Password <span class="k">for</span> user postgres:
+&gt; <span class="nv">postgres</span><span class="o">=</span><span class="c1">#</span>
+</code></pre></div>
+
+
+<p>Comandos do&nbsp;psql:</p>
+<div class="highlight"><pre><span></span><code><span class="se">\l</span>ist <span class="c1"># lista todas as databases no banco de dados</span>
+<span class="se">\c</span> nome_do_banco <span class="c1"># realiza a conexão com o banco</span>
+<span class="se">\d</span>t <span class="c1"># lista as tabelas no banco que está conectado</span>
+<span class="se">\d</span>n <span class="c1"># mostra schemas criados</span>
+<span class="se">\p</span>assword <span class="c1"># altera a senha para o usuário conectado</span>
+<span class="se">\q</span> <span class="c1"># sai do console do psql</span>
+</code></pre></div>
+
+
+<p>Podemos também executar comando sql dentro do <code>psql</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># criando um novo banco:</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#create database teste;</span>
+CREATE DATABASE
+
+<span class="c1"># conectando ao banco criado:</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#\c teste</span>
+You are now connected to database <span class="s2">&quot;teste&quot;</span> as user <span class="s2">&quot;postgres&quot;</span>.
+
+<span class="c1"># criando uma nova tabela:</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#create table usuarios(nome varchar(20), idade int);</span>
+CREATE TABLE
+
+<span class="c1"># inserindo usuários no banco de dados:</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1">#insert into usuarios (nome, idade) values (&#39;João&#39;, 22);</span>
+INSERT <span class="m">0</span> <span class="m">1</span>
+
+<span class="c1"># selecionando dados da tabela usuarios:</span>
+nome <span class="p">|</span> idade
+-----+------
+João <span class="p">|</span>    <span class="m">22</span>
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span>
+</code></pre></div>
+	</div>
+
+	<div id="related-articles">
+		<a href="/instalacao-micropython.html" id="next-neighbour">&laquo; Micropython</a>
+		<a href="/instalacao-python-pip.html" id="prev-neighbour">python3 e pip3 &raquo;</a>
+	</div>
+
+	<hr>
+
+	<!-- Disqus -->
+	<div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function() {
+		this.page.url = 'https://bergpb.github.io/instalacao-postgres-linux.html';
+		this.page.identifier = 'instalacao-postgres-linux.html';
+	};
+
+	(function() {
+		var d = document, s = d.createElement('script');
+		s.src = '//lbarbosa.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+	</script>
+			<hr>
+		</article>
+
+		<footer>
+			<p>Powered by <a class="link" href="http://getpelican.com">Pelican</a>.</p>
+		</footer>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Microcontroladores</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/microcontroladores.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Micropython</title><link href="https://bergpb.github.io/instalacao-micropython.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name></name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-micropython.html</id><summary type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
+&lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
+&lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de código entre diferentes boards. Quase que em 90% dos casos o mesmo código escrito no &lt;span class="caps"&gt;ESP8266&lt;/span&gt; irão executar no &lt;span class="caps"&gt;ESP32&lt;/span&gt; (apesar de suas particularidades como executar threads, disponível apenas no &lt;span class="caps"&gt;ESP32&lt;/span&gt;).&lt;/p&gt;
+&lt;h3&gt;Instalação&lt;/h3&gt;
+&lt;p&gt;Para realizar a instalação precisamos do pacote esptool que pode ser baixado pelo &lt;code&gt;pip3&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 install esptool --user
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Conecte seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt; ou &lt;span class="caps"&gt;ESP32&lt;/span&gt; na porta usb do seu computador e execute o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;p&gt;Este comando irá limpar a memória flash do seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;br&gt;
+&lt;em&gt;A porta pode não ser igual a utilizada neste&amp;nbsp;post.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;esptool.py --port /dev/ttyUSB0 erase_flash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Baixe a imagem oficial para sua board sendo ela o &lt;span class="caps"&gt;ESP8266&lt;/span&gt; ou &lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;As imagens podem ser baixadas através do site: &lt;a href="https://micropython.org/download"&gt;https://micropython.org/download&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;ESP8266&lt;/span&gt;:&lt;br&gt;
+&lt;a href="https://micropython.org/resources/firmware/esp8266-20191220-v1.12.bin"&gt;https://micropython.org/resources/firmware/esp8266-20191220-v1.12.bin&lt;/a&gt;.&lt;br&gt;
+&lt;span class="caps"&gt;ESP32&lt;/span&gt;:&lt;br&gt;
+&lt;a href="https://micropython.org/resources/firmware/esp32-idf4-20191220-v1.12.bin"&gt;https://micropython.org/resources/firmware/esp32-idf4-20191220-v1.12.bin&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Links atualizados em&amp;nbsp;05/01/2020&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Para realizar o flash do firmware em seu &lt;span class="caps"&gt;ESP&lt;/span&gt;, execute o segundo comando:&lt;br&gt;
+- &lt;em&gt;A porta pode não ser igual a utilizada neste post.&lt;/em&gt;&lt;br&gt;
+- &lt;em&gt;O último parâmetro repassado no comando deve ser o nome do arquivo que você&amp;nbsp;baixou.&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;esptool.py --port /dev/ttyUSB0 --baud &lt;span class="m"&gt;460800&lt;/span&gt; write_flash --flash_size&lt;span class="o"&gt;=&lt;/span&gt;detect &lt;span class="m"&gt;0&lt;/span&gt; esp8266-20190529-v1.11.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após esses passos o firmware estará instalado no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;.&lt;br&gt;
+Caso queria voltar a executar códigos em C na sua board, basta realizar qualquer upload através do Arduino &lt;span class="caps"&gt;IDE&lt;/span&gt; que o firmware original será reescrito&amp;nbsp;novamente.&lt;/p&gt;
+&lt;p&gt;Fonte: &lt;a href="https://docs.micropython.org/en/latest/index.html"&gt;https://docs.micropython.org/en/latest/index.html&lt;/a&gt;&lt;/p&gt;</content><category term="Microcontroladores"></category><category term="microcontroladores"></category><category term="python"></category></entry></feed>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Linguagem</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/linguagem.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>python3 e pip3</title><link href="https://bergpb.github.io/instalacao-python-pip.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-python-pip.html</id><summary type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
+&lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
+Então …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
+&lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
+Então comece a usa o &lt;code&gt;python3&lt;/code&gt; em seus projeto e evite problemas&amp;nbsp;futuros.&lt;/p&gt;
+&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos a versão &lt;code&gt;3.8.1&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Realizando a&amp;nbsp;instalação:&lt;/p&gt;
+&lt;p&gt;Instalando os pacotes &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; pelo&amp;nbsp;apt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3 python3-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para conferir a versão do &lt;code&gt;python&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para conferir a versão do &lt;code&gt;pip&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos entrar no console do &lt;code&gt;python&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E executar o famoso &amp;#8216;hello&amp;nbsp;world&amp;#8217;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# digite o texto abaixo e aperte enter:&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# saída no console:&lt;/span&gt;
+&lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linguagem"></category><category term="python"></category><category term="pip"></category></entry></feed>

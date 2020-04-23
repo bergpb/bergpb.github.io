@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Flask</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/flask.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Sua Primeira Aplicação com Flask</title><link href="https://bergpb.github.io/primeira-aplicacao-flask.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/primeira-aplicacao-flask.html</id><summary type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
+&lt;p&gt;Aviso:&lt;br&gt;
+Obs: Tenha o &lt;code&gt;python3 …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
+&lt;p&gt;Aviso:&lt;br&gt;
+Obs: Tenha o &lt;code&gt;python3&lt;/code&gt; e o &lt;code&gt;pip&lt;/code&gt; instalados em seu &lt;span class="caps"&gt;SO&lt;/span&gt;.&lt;/p&gt;
+&lt;h3&gt;Iniciando&amp;nbsp;aplicação&lt;/h3&gt;
+&lt;p&gt;Vamos criar uma pasta para nosso projeto, criar uma &lt;code&gt;venv&lt;/code&gt; e instalar o &lt;code&gt;flask&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Criando uma&amp;nbsp;pasta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir primeira_aplicacao_flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entrando na&amp;nbsp;pasta:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; primeira_aplicacao_flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora vamos criar a nossa &lt;code&gt;venv&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vamos ativar a &lt;code&gt;venv&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;E instalar &lt;code&gt;flask&lt;/code&gt; com o &lt;code&gt;pip&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Após isso já podemos criar nosso arquivo e iniciar nossa&amp;nbsp;aplicação:&lt;/p&gt;
+&lt;p&gt;Cria um novo arquivo através do&amp;nbsp;terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch app.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Usando alguma &lt;span class="caps"&gt;IDE&lt;/span&gt; de sua preferência ou o próprio &lt;code&gt;vim&lt;/code&gt; ou &lt;code&gt;nano&lt;/code&gt;, abra o arquivo criado no anteriormente e insira o seguinte&amp;nbsp;conteúdo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create_app&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="nd"&gt;@app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+      &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Hello World&amp;#39;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Devemos esportar as serguintes variáveis de ambiente para o Flask inicie a aplicação&amp;nbsp;corretamente:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;FLASK_ENV&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;development
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;FLASK_APP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;app.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora vamos servir nossa aplicação para que possamos ver seu retorno no&amp;nbsp;browser.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;flask run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Teremos um retorno semelhante a&amp;nbsp;esse:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt; * Serving Flask app &lt;span class="s2"&gt;&amp;quot;app.py&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;lazy loading&lt;span class="o"&gt;)&lt;/span&gt;
+ * Environment: development
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ &lt;span class="o"&gt;(&lt;/span&gt;Press CTRL+C to quit&lt;span class="o"&gt;)&lt;/span&gt;
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: &lt;span class="m"&gt;123&lt;/span&gt;-456-789
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podemos acessar a aplicação através da url &lt;a href="http://localhost:5000"&gt;http://localhost:5000&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Agora você já pode se considerar um desenvolvendor iniciante com micro-framework Flask.&lt;br&gt;
+Ainda tem bastante conteúdo sobre Flask para postar então fique ligado e até o próximo&amp;nbsp;post.&lt;/p&gt;</content><category term="Flask"></category><category term="flask"></category><category term="python"></category><category term="microframework"></category></entry></feed>

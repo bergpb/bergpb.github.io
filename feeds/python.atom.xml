@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Python</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/python.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Ambientes Virtuais com Python</title><link href="https://bergpb.github.io/python-venv.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/python-venv.html</id><summary type="html">&lt;p&gt;A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do&amp;nbsp;sistema.&lt;/p&gt;
+&lt;p&gt;Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A utilização de ambientes virtuais para aplicações em Python se tornou bastante utlizada por vários motivos, dentre eles isolar os pacotes da aplicação com os do pacotes do&amp;nbsp;sistema.&lt;/p&gt;
+&lt;p&gt;Isso ajuda bastante trabalha em vários projetos usando as mesmas bibliotecas mas com versões diferentes, e também com ambientes em que não exista permissão para instalação dos pacotes como superusuário assim com o &lt;code&gt;venv&lt;/code&gt; não há&amp;nbsp;preocupação.&lt;/p&gt;
+&lt;p&gt;Existem algumas vantagens em utilizar o &lt;code&gt;venv&lt;/code&gt; no lugar de outras bibliotecas, uma delas é que se trata um pacote do próprio &lt;code&gt;python3&lt;/code&gt;, trazendo assim toda as facilidades de uma biblioteca&amp;nbsp;padrão.&lt;/p&gt;
+&lt;p&gt;Caso tenha interesse em conhecer outras bibliotecas e suas diferenças no link abaixo temos uma explicação bacana sobre cada uma delas &lt;em&gt;em inglês&lt;/em&gt;:
+&lt;a href="https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe"&gt;https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Instalando o pacote &lt;code&gt;venv&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Obs:
+O &lt;code&gt;venv&lt;/code&gt; funciona nas versões 2.7, 3.5, 3.6, 3.7.6 e 3.8 do Python.&lt;br&gt;
+Neste post iremos usar a 3.x, padrão de vários sistemas operacionais como no Ubuntu e no&amp;nbsp;Manjaro.&lt;/p&gt;
+&lt;p&gt;Instale o pacote &lt;code&gt;venv&lt;/code&gt; com o &lt;code&gt;pip3&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3-venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Dentro do seu projeto use o comando &lt;code&gt;python -m venv .venv&lt;/code&gt; para criar uma virtual&amp;nbsp;environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pronto instalação finalizada. Agora vamos aprender a usar o &lt;code&gt;venv&lt;/code&gt; dentro do nosso&amp;nbsp;projeto:&lt;/p&gt;
+&lt;h3&gt;Adicionando uma &lt;code&gt;venv&lt;/code&gt; no seu&amp;nbsp;projeto&lt;/h3&gt;
+&lt;p&gt;Crie a pasta do seu&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir nome_do_projeto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Entre na pasta do&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; nome_do_projeto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Insira o seguinte comando para criar uma &lt;code&gt;venv&lt;/code&gt; dentro do seu&amp;nbsp;projeto:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python -m venv .venv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Precisamos ativar a &lt;code&gt;venv&lt;/code&gt; para que use a versão do python e pacotes apenas no seu projeto separando-os do seu sistema&amp;nbsp;operacional:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; .venv/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;O retorno será semelhante a&amp;nbsp;esse:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;(&lt;/span&gt;.venv&lt;span class="o"&gt;)&lt;/span&gt;bergpb@localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para desativar a &lt;code&gt;venv&lt;/code&gt; basta usar o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Eu costumo adicionar o comando para ativar uma &lt;code&gt;venv&lt;/code&gt; como alias no meu &lt;code&gt;.bashrc&lt;/code&gt; desta forma, assim não preciso digitar o comando completo, apenas utilizo o alias &lt;code&gt;activate&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;alias activate=&amp;#39;source .venv/bin/activate&amp;#39;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pronto agora você pode instalar pacotes sem se preocupar com conflitos em outros&amp;nbsp;projetos.&lt;/p&gt;</content><category term="Python"></category><category term="python"></category><category term="venv"></category><category term="virtualenv"></category><category term="environments"></category></entry></feed>
