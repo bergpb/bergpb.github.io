@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+	<h1 class="title">Posts</h1>
+	<div class="content">
+		{% for year, articles in dates | groupby('date.year') | sort(reverse=True) %}
+		<h2>{{ year }}</h2>
+		<ul>
+			{% for article in articles | sort(attribute='date', reverse=True) %}
+			<li>
+				<a class="link" href="/{{ article.url }}">
+					{{ article.title }}
+				</a>
+				- {{ article.date.strftime('%d/%m/%Y') }}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endfor %}
+	</div>
+	<div id="back-to-home"><a class="link" href="/">&laquo; Início</a></div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Tags | {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<h1 class="title">Tags</h1>
+<div class="content">
+    <div class="tags-cloud">
+        {% for tag, articles in tags|sort %}
+        {% set num = articles|count %}
+        <a href="#{{ tag.slug }}-ref" class="badge badge-pill badge-dark">{{ tag }}<span> ({{ num }})</span></a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="content">
+    {% for tag, articles in tags|sort %}
+        <h3 id="{{ tag.slug }}-ref" class="tag-title">{{ tag }}</h3>
+        <ul>
+            {% for article in articles|sort(reverse = true, attribute = 'date') %}
+            <li>
+                <a href="/{{ article.url }}">
+                    {{ article.title }}
+                    {%if article.subtitle %}
+                    <small class="subtitle">{{ article.subtitle }}</small>
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+</div>
+
+{% endblock content %}

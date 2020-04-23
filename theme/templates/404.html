@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Página não encontrada | {{ SITENAME }}{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block content %}
+    <h1 class="title">Página não encontrada!</h1>
+    <div class="content">
+        <p>A página solicitada não pode ser encontrada. Tente acessar os <a href="/archive/">posts</a> do blog.</p>
+    </div>
+    <div id="back-to-home"><a class="link" href="/">&laquo; Início</a></div>
+{% endblock %}
