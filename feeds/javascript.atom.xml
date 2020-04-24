@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Javascript</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/javascript.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb - Javascript</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/feeds/javascript.atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.&lt;br&gt;
 Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
 Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Instalação&lt;/h3&gt;
-&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.&lt;br&gt;
 Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
 Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Instalação&lt;/h3&gt;
@@ -28,8 +28,8 @@ Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn init&lt;/code&gt; &amp;#8212; cria o arquivo package.json com suas principais&amp;nbsp;configurações&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn add&lt;/code&gt; &amp;#8212; adiciona o pacote para uso em seu&amp;nbsp;projeto&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn install&lt;/code&gt; ou simplesmente &lt;code&gt;yarn&lt;/code&gt; &amp;#8212; instala as depedências definidas no &lt;code&gt;package.json&lt;/code&gt;&lt;/li&gt;
@@ -87,6 +87,8 @@ Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt; Fontes: &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
-&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;&lt;br&gt;
-&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/p&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry></feed>
+&lt;p&gt;Fontes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry></feed>

@@ -4,8 +4,8 @@
 Então …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
 &lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
 Então comece a usa o &lt;code&gt;python3&lt;/code&gt; em seus projeto e evite problemas&amp;nbsp;futuros.&lt;/p&gt;
-&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos a versão &lt;code&gt;3.8.1&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;Realizando a&amp;nbsp;instalação:&lt;/p&gt;
+&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos sempre a versão mais recente da linguagem pois se trata de uma distribuição do tipo Rolling Release (obrigado ao Spacedevs pela dica). No Manjaro atualmente estamos com a versão &lt;code&gt;3.8.2&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Realizando a&amp;nbsp;instalação&lt;/h3&gt;
 &lt;p&gt;Instalando os pacotes &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; pelo&amp;nbsp;apt:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3 python3-pip
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

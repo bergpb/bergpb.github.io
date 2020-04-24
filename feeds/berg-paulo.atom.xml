@@ -119,8 +119,8 @@ João &lt;span class="p"&gt;|&lt;/span&gt;    &lt;span class="m"&gt;22&lt;/span&
 Então …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A instalação do &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; se tornaram itens indispensáveis para muitos ambientes atuais de&amp;nbsp;desenvolvimento.&lt;/p&gt;
 &lt;p&gt;A versão 2.7 do Python ainda é bastante utilizada mas será descontinuada em 2020 (o countdown pode ser conferido neste site &lt;a href="https://pythonclock.org"&gt;https://pythonclock.org&lt;/a&gt;), e programas escritos com ele serão considerados obsoletos.&lt;br&gt;
 Então comece a usa o &lt;code&gt;python3&lt;/code&gt; em seus projeto e evite problemas&amp;nbsp;futuros.&lt;/p&gt;
-&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos a versão &lt;code&gt;3.8.1&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;Realizando a&amp;nbsp;instalação:&lt;/p&gt;
+&lt;p&gt;Caso você use o Manjaro (&amp;gt;18.x) ou Ubuntu (&amp;gt;18.x) não terá problemas com o mesmo pois o sistema já vem com &lt;code&gt;python3&lt;/code&gt;, inclusive no Manjaro temos sempre a versão mais recente da linguagem pois se trata de uma distribuição do tipo Rolling Release (obrigado ao Spacedevs pela dica). No Manjaro atualmente estamos com a versão &lt;code&gt;3.8.2&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Realizando a&amp;nbsp;instalação&lt;/h3&gt;
 &lt;p&gt;Instalando os pacotes &lt;code&gt;python3&lt;/code&gt; e &lt;code&gt;pip3&lt;/code&gt; pelo&amp;nbsp;apt:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install python3 python3-pip
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -146,11 +146,11 @@ Então comece a usa o &lt;code&gt;python3&lt;/code&gt; em seus projeto e evite p
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hello world&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;# saída no console:&lt;/span&gt;
 &lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linguagem"></category><category term="python"></category><category term="pip"></category></entry><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Linguagem"></category><category term="python"></category><category term="pip"></category></entry><entry><title>Gerenciando dependências com o Yarn</title><link href="https://bergpb.github.io/instalacao-yarn.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-yarn.html</id><summary type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.&lt;br&gt;
 Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
 Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Instalação&lt;/h3&gt;
-&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.
+&lt;p&gt;Adicione o yarn em seu repositório de pacotes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Yarn chegou e novembro de 2016 anunciado pelo Facebook sendo um gerenciador de pacotes mais rápido e seguro.&lt;br&gt;
 Hoje, tornou-se uma grande ferramenta em projetos escritos em Javascript.
 Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Instalação&lt;/h3&gt;
@@ -175,8 +175,8 @@ Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Principais comandos do&amp;nbsp;Yarn:&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn init&lt;/code&gt; &amp;#8212; cria o arquivo package.json com suas principais&amp;nbsp;configurações&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn add&lt;/code&gt; &amp;#8212; adiciona o pacote para uso em seu&amp;nbsp;projeto&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;yarn install&lt;/code&gt; ou simplesmente &lt;code&gt;yarn&lt;/code&gt; &amp;#8212; instala as depedências definidas no &lt;code&gt;package.json&lt;/code&gt;&lt;/li&gt;
@@ -234,9 +234,11 @@ Iremos aprender como instalar e utilizar alguns dos comandos disponíveis do &lt
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt; Fontes: &lt;/em&gt;&lt;/strong&gt;&lt;br&gt;
-&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;&lt;br&gt;
-&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/p&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry><entry><title>Sua Primeira Aplicação com Flask</title><link href="https://bergpb.github.io/primeira-aplicacao-flask.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/primeira-aplicacao-flask.html</id><summary type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
+&lt;p&gt;Fontes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://yarnpkg.com"&gt;https://yarnpkg.com&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yarnpkg.com/lang/en/docs/install/#debian-stable"&gt;https://yarnpkg.com/lang/en/docs/install/#debian-stable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Javascript"></category><category term="yarn"></category><category term="javascript"></category></entry><entry><title>Sua Primeira Aplicação com Flask</title><link href="https://bergpb.github.io/primeira-aplicacao-flask.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name>Berg Paulo</name></author><id>tag:bergpb.github.io,2020-04-05:/primeira-aplicacao-flask.html</id><summary type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
 &lt;p&gt;Aviso:&lt;br&gt;
 Obs: Tenha o &lt;code&gt;python3 …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;O Flask é um dos microframeworks mais utilizados na linguagem Python, por &lt;em&gt;&amp;#8220;oferecer sugestões e não impõe qualquer dependência ou layout, dando assim liberdade ao desenvolvedor para escolher ferramentas e bibliotecas que desejar&amp;#8221;&lt;/em&gt;, além ser simples e prático de inicar uma aplicação como veremos&amp;nbsp;abaixo:&lt;/p&gt;
 &lt;p&gt;Aviso:&lt;br&gt;
