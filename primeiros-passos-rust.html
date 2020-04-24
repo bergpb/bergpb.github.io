@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Basic Metas -->
+	<meta charset="utf-8">
+	<title>Primeiros passos com Rust | bergpb</title>
+	<meta name="description" content="“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.” Rust Documentation Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem. Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe …">
+	<meta name="author" content="Berg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- Twitter Cards and Open Graph -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:creator" content="@lbergpb">
+	<meta name="twitter:domain" content="lbarbosa.netlify.com">
+	<meta name="twitter:site" content="@lbergpb">
+	<meta property="og:title" content="Primeiros passos com Rust">
+	<meta property="og:description" content="“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.” Rust Documentation Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem. Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe …">
+	<meta property="og:image" content="https://bergpb.github.io/images/icons/avatar.png">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://bergpb.github.io/primeiros-passos-rust.html">
+
+	<!-- Stylesheets and Web Fonts -->
+    <link rel="stylesheet" href="/theme/css/style.min.css">
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon-180x180.png">
+
+	<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/images/icons/favicon-196x196.png" sizes="196x196">
+
+	<meta name="theme-color" content="#FF8000">
+
+	<meta name="msapplication-TileColor" content="#FF8000">
+	<meta name="msapplication-TileImage" content="/images/icons/mstile-144x144.png">
+	<meta name="msapplication-square70x70logo" content="/images/icons/mstile-small.png">
+	<meta name="msapplication-square150x150logo" content="/images/icons/mstile-medium.png">
+	<meta name="msapplication-wide310x150logo" content="/images/icons/mstile-wide.png">
+	<meta name="msapplication-square310x310logo" content="/images/icons/mstile-large.png">
+
+	<!--[if lt IE 9]>
+	<script src="/theme/js/html5shiv.min.js"></script>
+	<script src="/theme/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<aside>
+			<a href="/"><img id="avatar" alt="Site Avatar" src="/images/icons/avatar.png"></a>
+			<div id="name"><a href="/">bergpb</a></div>
+			<div id="bio">Desenvolvedor Web. Entusiasta pela cultura DevOps e tecnologia.</div>
+
+			<div id="sidebar-links">
+				<a class="link" href="/archive/">Posts</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/tags/">Tags</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="link" href="/about/">Sobre</a>
+			</div>
+
+			<div id="social">
+				<a href="mailto:lindembergdepaulo@gmail.com" target="_blank" title="Email (lindembergdepaulo@gmail.com)" class="icon fa fa-envelope"></a>
+				<a href="http://twitter.com/lbergpb" target="_blank" title="Twitter" class="icon fa fa-twitter"></a>
+				<a href="http://github.com/bergpb" target="_blank" title="GitHub" class="icon fa fa-github"></a>
+			</div>
+
+			<hr id="sidebar-divider">
+		</aside>
+
+		<article>
+	<h1 class="title"><a href="/primeiros-passos-rust.html" title="Permalink to Primeiros passos com Rust">Primeiros passos com&nbsp;Rust</a></h1>
+	<time class="date" datetime="2020-04-23 00:00:00-03:00">23/Apr/2020</time>
+	<div class="content">
+		<p><em>“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.”</em><br>
+<em>Rust&nbsp;Documentation</em></p>
+<p>Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem.<br>
+Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe de uma ótima documentação e pela sua utilização em grandes projetos de empresas como Mozilla e&nbsp;Microsoft.</p>
+<p>O Rust é uma linguagem compilada e multiparadigma, e trouxe várias coisas boas de outras linguagens.<br>
+Algumas merecem ser&nbsp;citadas:</p>
+<ul>
+<li>Modelos de Abstração de Máquina -&nbsp;C</li>
+<li>Bindings Opcionais -&nbsp;Swift</li>
+<li>Programação Funcional - Haskell, OCaml,&nbsp;F#</li>
+<li>Passagem de Mensagens e Falhas em Threads:&nbsp;Erlang</li>
+</ul>
+<p>Um dos pontos fortes da linguagem é seu compilador que traz ao usuário uma experiência incrível com relação a outras linguagens mas isso é assunto pra outro&nbsp;post.</p>
+<p>Para iniciar com a linguagem é necessário a instalação de algumas ferramentas&nbsp;como:</p>
+<ul>
+<li><code>rustc</code> - Compilador do&nbsp;Rust</li>
+<li><code>cargo</code> - Gerenciador de pacotes do&nbsp;Rust</li>
+<li><code>clippy</code> - Linter do&nbsp;Rust</li>
+</ul>
+<p>Para a instação destas ferramentas podemos utilizar o <code>rustup</code>, que vai deixar nosso ambiente pronto para começar com a&nbsp;linguagem.</p>
+<p>Instalação do <code>rustup</code> para Linux e&nbsp;Mac:</p>
+<div class="highlight"><pre><span></span><code>curl --proto <span class="s1">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs <span class="p">|</span> sh
+</code></pre></div>
+
+
+<p>Para Windows:
+Faça o download do arquivo <code>rustup-init.exe</code> em <a href="www.rustup.rs">www.rustup.rs</a> e&nbsp;execute.</p>
+<p>Após a instalação você verá algo parecido no seu&nbsp;terminal:</p>
+<div class="highlight"><pre><span></span><code>stable installed - rustc <span class="m">1</span>.43.0 <span class="o">(</span>4fb7144ed <span class="m">2020</span>-04-20<span class="o">)</span>
+Rust is installed now. Great!
+</code></pre></div>
+
+
+<p>Para verificar a instalação iremos executar o seguinte&nbsp;comando:</p>
+<div class="highlight"><pre><span></span><code>rustc --version
+</code></pre></div>
+
+
+<p>Agora vamos ao famoso Hello&nbsp;World:</p>
+<p>Crie um arquivo com o nome <code>hello_world.rs</code>,<br>
+Insira o seguinte conteúdo no&nbsp;mesmo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+
+<p>Obs:<br>
+Rust trabalha com extensões de arquivo <code>.rs</code> e segue o <code>snake_case</code>.<br>
+<code>fn</code> significa que estamos definindo uma função, e o <code>main</code> é o início de todo programa escrito em&nbsp;Rust.</p>
+<p>Logo em seguida, salve o arquivo.<br>
+Compile o mesmo com o comando <code>rustc hello_word.rs</code>.<br>
+E execute o binário gerado com <code>./hello_world</code> (Linux ou Mac) ou <code>file.exe</code> (Windows)</p>
+<div class="highlight"><pre><span></span><code>❯ ./hello_world
+Hello World
+</code></pre></div>
+
+
+<p>Bem esse foi meu primeiro post falando sobre Rust, irei continuar progredindo com meus estudos na linguagem e irei postando as novidades por&nbsp;aqui.</p>
+<p>Até o próximo&nbsp;post.</p>
+<p>Alguns links&nbsp;interessantes:</p>
+<ul>
+<li>Learning Rust: <a href="https://learning-rust.github.io">https://learning-rust.github.io</a></li>
+<li>Rust Playgroud - <a href="https://play.rust-lang.org/">https://play.rust-lang.org/</a></li>
+<li>rustup - <a href="https://rustup.rs/">https://rustup.rs/</a></li>
+</ul>
+	</div>
+
+	<div id="related-articles">
+		<a href="/instalacao-micropython.html" id="prev-neighbour">Micropython &raquo;</a>
+	</div>
+
+	<hr>
+
+	<!-- Disqus -->
+	<div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function() {
+		this.page.url = 'https://bergpb.github.io/primeiros-passos-rust.html';
+		this.page.identifier = 'primeiros-passos-rust.html';
+	};
+
+	(function() {
+		var d = document, s = d.createElement('script');
+		s.src = '//lbarbosa.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+	})();
+	</script>
+			<hr>
+		</article>
+
+		<footer>
+			<p>Powered by <a class="link" href="http://getpelican.com">Pelican</a>.</p>
+		</footer>
+	</div>
+
+
+</body>
+</html>

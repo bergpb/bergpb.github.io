@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-05T09:00:00-03:00</updated><entry><title>Micropython</title><link href="https://bergpb.github.io/instalacao-micropython.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name></name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-micropython.html</id><summary type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>bergpb</title><link href="https://bergpb.github.io/" rel="alternate"></link><link href="https://bergpb.github.io/atom.xml" rel="self"></link><id>https://bergpb.github.io/</id><updated>2020-04-23T00:00:00-03:00</updated><entry><title>Primeiros passos com Rust</title><link href="https://bergpb.github.io/primeiros-passos-rust.html" rel="alternate"></link><published>2020-04-23T00:00:00-03:00</published><updated>2020-04-23T00:00:00-03:00</updated><author><name></name></author><id>tag:bergpb.github.io,2020-04-23:/primeiros-passos-rust.html</id><summary type="html">&lt;p&gt;&lt;em&gt;“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.”&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;Rust&amp;nbsp;Documentation&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem.&lt;br&gt;
+Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.”&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;Rust&amp;nbsp;Documentation&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem.&lt;br&gt;
+Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe de uma ótima documentação e pela sua utilização em grandes projetos de empresas como Mozilla e&amp;nbsp;Microsoft.&lt;/p&gt;
+&lt;p&gt;O Rust é uma linguagem compilada e multiparadigma, e trouxe várias coisas boas de outras linguagens.&lt;br&gt;
+Algumas merecem ser&amp;nbsp;citadas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Modelos de Abstração de Máquina -&amp;nbsp;C&lt;/li&gt;
+&lt;li&gt;Bindings Opcionais -&amp;nbsp;Swift&lt;/li&gt;
+&lt;li&gt;Programação Funcional - Haskell, OCaml,&amp;nbsp;F#&lt;/li&gt;
+&lt;li&gt;Passagem de Mensagens e Falhas em Threads:&amp;nbsp;Erlang&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Um dos pontos fortes da linguagem é seu compilador que traz ao usuário uma experiência incrível com relação a outras linguagens mas isso é assunto pra outro&amp;nbsp;post.&lt;/p&gt;
+&lt;p&gt;Para iniciar com a linguagem é necessário a instalação de algumas ferramentas&amp;nbsp;como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rustc&lt;/code&gt; - Compilador do&amp;nbsp;Rust&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cargo&lt;/code&gt; - Gerenciador de pacotes do&amp;nbsp;Rust&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clippy&lt;/code&gt; - Linter do&amp;nbsp;Rust&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para a instação destas ferramentas podemos utilizar o &lt;code&gt;rustup&lt;/code&gt;, que vai deixar nosso ambiente pronto para começar com a&amp;nbsp;linguagem.&lt;/p&gt;
+&lt;p&gt;Instalação do &lt;code&gt;rustup&lt;/code&gt; para Linux e&amp;nbsp;Mac:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl --proto &lt;span class="s1"&gt;&amp;#39;=https&amp;#39;&lt;/span&gt; --tlsv1.2 -sSf https://sh.rustup.rs &lt;span class="p"&gt;|&lt;/span&gt; sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para Windows:
+Faça o download do arquivo &lt;code&gt;rustup-init.exe&lt;/code&gt; em &lt;a href="www.rustup.rs"&gt;www.rustup.rs&lt;/a&gt; e&amp;nbsp;execute.&lt;/p&gt;
+&lt;p&gt;Após a instalação você verá algo parecido no seu&amp;nbsp;terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;stable installed - rustc &lt;span class="m"&gt;1&lt;/span&gt;.43.0 &lt;span class="o"&gt;(&lt;/span&gt;4fb7144ed &lt;span class="m"&gt;2020&lt;/span&gt;-04-20&lt;span class="o"&gt;)&lt;/span&gt;
+Rust is installed now. Great!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Para verificar a instalação iremos executar o seguinte&amp;nbsp;comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rustc --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Agora vamos ao famoso Hello&amp;nbsp;World:&lt;/p&gt;
+&lt;p&gt;Crie um arquivo com o nome &lt;code&gt;hello_world.rs&lt;/code&gt;,&lt;br&gt;
+Insira o seguinte conteúdo no&amp;nbsp;mesmo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;fn&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Obs:&lt;br&gt;
+Rust trabalha com extensões de arquivo &lt;code&gt;.rs&lt;/code&gt; e segue o &lt;code&gt;snake_case&lt;/code&gt;.&lt;br&gt;
+&lt;code&gt;fn&lt;/code&gt; significa que estamos definindo uma função, e o &lt;code&gt;main&lt;/code&gt; é o início de todo programa escrito em&amp;nbsp;Rust.&lt;/p&gt;
+&lt;p&gt;Logo em seguida, salve o arquivo.&lt;br&gt;
+Compile o mesmo com o comando &lt;code&gt;rustc hello_word.rs&lt;/code&gt;.&lt;br&gt;
+E execute o binário gerado com &lt;code&gt;./hello_world&lt;/code&gt; (Linux ou Mac) ou &lt;code&gt;file.exe&lt;/code&gt; (Windows)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;❯ ./hello_world
+Hello World
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Bem esse foi meu primeiro post falando sobre Rust, irei continuar progredindo com meus estudos na linguagem e irei postando as novidades por&amp;nbsp;aqui.&lt;/p&gt;
+&lt;p&gt;Até o próximo&amp;nbsp;post.&lt;/p&gt;
+&lt;p&gt;Alguns links&amp;nbsp;interessantes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learning Rust: &lt;a href="https://learning-rust.github.io"&gt;https://learning-rust.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Rust Playgroud - &lt;a href="https://play.rust-lang.org/"&gt;https://play.rust-lang.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rustup - &lt;a href="https://rustup.rs/"&gt;https://rustup.rs/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Programação"></category><category term="rust"></category></entry><entry><title>Micropython</title><link href="https://bergpb.github.io/instalacao-micropython.html" rel="alternate"></link><published>2020-04-05T09:00:00-03:00</published><updated>2020-04-05T09:00:00-03:00</updated><author><name></name></author><id>tag:bergpb.github.io,2020-04-05:/instalacao-micropython.html</id><summary type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
 &lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Já pensou em executar códigos python em seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt;? Com micropython isso é&amp;nbsp;possível.&lt;/p&gt;
 &lt;p&gt;O micropython reescreve o firmware que executa códigos em C no seu &lt;span class="caps"&gt;ESP8266&lt;/span&gt;/&lt;span class="caps"&gt;ESP32&lt;/span&gt; (entre outras boards), assim você pode escrever seus programas em python sem a preocupação de ter uma &lt;span class="caps"&gt;IDE&lt;/span&gt; ou compilação de código entre diferentes boards. Quase que em 90% dos casos o mesmo código escrito no &lt;span class="caps"&gt;ESP8266&lt;/span&gt; irão executar no &lt;span class="caps"&gt;ESP32&lt;/span&gt; (apesar de suas particularidades como executar threads, disponível apenas no &lt;span class="caps"&gt;ESP32&lt;/span&gt;).&lt;/p&gt;
 &lt;h3&gt;Instalação&lt;/h3&gt;
