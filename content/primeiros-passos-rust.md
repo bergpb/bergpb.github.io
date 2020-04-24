@@ -9,6 +9,8 @@ Status: published
 _“Rust is a systems programming language focused on three goals: safety, speed, and concurrency.”_  
 _Rust Documentation_
 
+Rust é uma linguagem de programação criada por Graydon Hoare na Mozilla por volta do ano de 2010, e hoje está na versão `1.43`.
+
 Iniciei meus estudos com a linguagem recentemente, e já me sinto bem entusiasmado em continuar prosseguindo com a linguagem.  
 Mas porque o interesse em estudar Rust? Temos comunidades bem ativas aqui no Brasil, dispõe de uma ótima documentação e pela sua utilização em grandes projetos de empresas como Mozilla e Microsoft.
 
@@ -80,6 +82,7 @@ Até o próximo post.
 
 Alguns links interessantes:
 
+ - Rust Lang - [https://www.rust-lang.org/](https://www.rust-lang.org/)
  - Learning Rust: [https://learning-rust.github.io](https://learning-rust.github.io)
  - Rust Playgroud - [https://play.rust-lang.org/](https://play.rust-lang.org/)
  - rustup - [https://rustup.rs/](https://rustup.rs/)

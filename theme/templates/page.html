@@ -3,18 +3,7 @@
 {% block title %}{{ page.title | striptags }} | {{ SITENAME }}{% endblock %}
 {% block description %}{{ page.summary | striptags }}{% endblock %}
 
-{% block meta %}
-	<!-- Twitter Cards and Open Graph -->
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:creator" content="{{ TWITTER_USERNAME }}">
-	<meta name="twitter:domain" content="{{ DOMAIN }}">
-	<meta name="twitter:site" content="{{ TWITTER_USERNAME }}">
-	<meta property="og:title" content="{{ page.title | striptags }}">
-	<meta property="og:description" content="{{ page.summary | striptags }}">
-	<meta property="og:image" content="{{ SITEURL }}/{{ ICONS_PATH }}/avatar.png">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}">
-{% endblock %}
+{% block meta %}{% endblock %}
 
 {% block content %}
 	<h1 class="title"><a href="/{{ page.url }}" title="{{ page.title | striptags }}">{{ page.title }}</a></h1>

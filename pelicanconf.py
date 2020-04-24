@@ -1,7 +1,7 @@
 # Theme-specific settings
 SITENAME = 'bergpb'
 DOMAIN = 'lbarbosa.netlify.com'
-BIO_TEXT = 'Desenvolvedor Web. Entusiasta pela cultura DevOps e tecnologia.'
+BIO_TEXT = 'Desenvolvedor Web. Entusiasta pela cultura DevOps, IOT e amante da tecnologia.'
 FOOTER_TEXT = 'Powered by <a class="link" href="http://getpelican.com">Pelican</a>.'
 
 DISQUS_SITENAME = "lbarbosa"
@@ -44,6 +44,9 @@ PAGE_SAVE_AS = '{slug}.html'
 
 ARCHIVES_URL = '{slug}'
 ARCHIVES_SAVE_AS = 'archive/index.html'
+
+
+DIRECT_TEMPLATES = ['index', 'tags', 'archives']
 
 
 FEED_ATOM = 'atom.xml'

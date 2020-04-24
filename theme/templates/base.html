@@ -4,7 +4,7 @@
 	<!-- Basic Metas -->
 	<meta charset="utf-8">
 	<title>{% block title %}{% endblock %}</title>
-	<meta name="description" content="{% block description %}{% endblock %}">
+	<meta name="description" content="Lets talk about programing!">
 	<meta name="author" content="{{ SITE_AUTHOR }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -12,37 +12,27 @@
 
 	<!-- Stylesheets and Web Fonts -->
 	{% assets filters="cssmin", output="css/style.min.css", "css/pneumatic.css", "css/pygment-monokai.css", "css/custom.css" %}
-    <link rel="stylesheet" href="/{{ ASSET_URL }}">
+    <link rel="stylesheet" type="text/css" href="/{{ ASSET_URL }}">
 	{% endassets %}
 
 	{% if GOOGLE_FONTS %}
-	<link href="https://fonts.googleapis.com/css?family={{ GOOGLE_FONTS | join('|') | replace(' ', '+') }}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family={{ GOOGLE_FONTS | join('|') | replace(' ', '+') }}">
 	{% endif %}
+
 	{% if SOCIAL_ICONS %}
 	{% if FA_EMBED_CODE %}
-	<link rel="stylesheet" href="https://use.fontawesome.com/{{ FA_EMBED_CODE }}.css">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/{{ FA_EMBED_CODE }}.css">
 	{% else %}
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{% endif %}
 	{% endif %}
 
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="/{{ ICONS_PATH }}/apple-touch-icon.png">
-	{% for size in (57, 60, 72, 76, 114, 120, 144, 152, 180) %}
-	<link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}" href="/{{ ICONS_PATH }}/apple-touch-icon-{{ size }}x{{ size }}.png">
-	{% endfor %}
-
+	<!-- Icons -->
 	{% for size in (16, 32, 96, 160, 196) %}
 	<link rel="icon" type="image/png" href="/{{ ICONS_PATH }}/favicon-{{ size }}x{{ size }}.png" sizes="{{ size }}x{{ size }}">
 	{% endfor %}
 
 	<meta name="theme-color" content="{{ THEME_COLOR }}">
-
-	<meta name="msapplication-TileColor" content="{{ THEME_COLOR }}">
-	<meta name="msapplication-TileImage" content="/{{ ICONS_PATH }}/mstile-144x144.png">
-	{% for name, size in (('square70x70', 'small'), ('square150x150', 'medium'), ('wide310x150', 'wide'), ('square310x310', 'large')) %}
-	<meta name="msapplication-{{ name }}logo" content="/{{ ICONS_PATH }}/mstile-{{ size }}.png">
-	{% endfor %}
 
 	<!--[if lt IE 9]>
 	<script src="/theme/js/html5shiv.min.js"></script>
@@ -94,23 +84,6 @@
 
 		ga('create', '{{ GOOGLE_ANALYTICS }}', '{{ DOMAIN }}');
 		ga('send', 'pageview');
-	</script>
-	{% endif %}
-
-	{% if GAUGES_ID %}
-	<!-- Gauges -->
-	<script type="text/javascript">
-		var _gauges = _gauges || [];
-		(function() {
-			var t   = document.createElement('script');
-			t.type  = 'text/javascript';
-			t.async = true;
-			t.id    = 'gauges-tracker';
-			t.setAttribute('data-site-id', '{{ GAUGES_ID }}');
-			t.src = '//secure.gaug.es/track.js';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(t, s);
-		})();
 	</script>
 	{% endif %}
 </body>
