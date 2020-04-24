@@ -39,9 +39,6 @@ ARTICLES_HOME = 5
 TAG_URL = 'tag/{slug}.html'
 TAG_SAVE_AS = 'tag/{slug}.html'
 
-DRAFT_URL = 'drafts/{slug}.html'
-DRAFT_SAVE_AS = 'drafts/{slug}.html'
-
 PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}.html'
 
